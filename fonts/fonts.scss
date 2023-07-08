@@ -1,0 +1,25 @@
+@CHARSET "UTF-8";
+
+@mixin ff($weight, $name, $family, $folder)
+{
+	@font-face {font-family: $family; font-style:normal; font-weight:$weight; src:url($folder + '/' + $name + '.ttf') format('truetype'); font-display: auto; }
+	@font-face {font-family: $family; font-style:italic; font-weight:$weight; src:url($folder + '/' + $name + '-italic.ttf') format('truetype'); font-display: auto; }
+}
+
+@mixin font-face($family, $folder, $list:100 200 300 400 500 600 700 800 900)
+{
+	@each $w in $list
+	{
+		@if ($w == 100) { @include ff(100, 'thin', $family, $folder); }
+		@if ($w == 200) { @include ff(200, 'extra-light', $family, $folder); }
+		@if ($w == 300) { @include ff(300, 'light', $family, $folder); }
+		@if ($w == 400) { @include ff(400, 'regular', $family, $folder); }
+		@if ($w == 500) { @include ff(500, 'medium', $family, $folder); }
+		@if ($w == 600) { @include ff(600, 'semi-bold', $family, $folder); }
+		@if ($w == 700) { @include ff(700, 'bold', $family, $folder); }
+		@if ($w == 800) { @include ff(800, 'extra-bold', $family, $folder); }
+		@if ($w == 900) { @include ff(900, 'black', $family, $folder); }
+	}
+}
+
+@include font-face('Montserrat', 'montserrat', 100 200 300 400 500 600 700 800 900);

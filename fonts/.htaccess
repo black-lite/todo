@@ -1,0 +1,29 @@
+<IfModule mod_headers.c>
+	Header set Access-Control-Allow-Origin: "*"
+</IfModule>
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresDefault "access plus 4 year"
+</IfModule>
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+	
+	RewriteCond %{REQUEST_FILENAME} -f
+	RewriteRule ^(.*)\.(htaccess|htpasswd|tpl|inc)$ - [R=404,NC,L]
+
+	RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)\.([0-9]+)\.([0-9]+)\.([0-9]+)(\.min)?\.css$ $1.css [NC,L]
+
+	AddEncoding gzip .gz
+	<FilesMatch "\.css\.gz$">
+		AddType "text/css" .gz
+	</FilesMatch>
+	<FilesMatch "\.ttf\.gz$">
+		AddType "font/ttf" .gz
+	</FilesMatch>
+	
+	RewriteCond %{HTTP:Accept-encoding} gzip
+	RewriteCond %{REQUEST_FILENAME}.gz -f
+	RewriteRule ^(.*)\.(css|ttf)$ $1.$2.gz [QSA,L]
+</IfModule>
