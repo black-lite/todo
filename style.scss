@@ -1,1 +1,13 @@
-body {  }
+html { width: 100%; height: 100%; }
+body {
+	width: 100%; height: 100%;
+	> div {
+		display: flex; justify-content: center; align-items: center;
+		box-shadow: 0 0 50px 5px rgba(34, 60, 80, 0.2);
+	}
+
+	div.create {
+		width: 200px; height: 40px; line-height: 40px; text-align: center;
+		color: white; background-color: #4f4fe2; cursor: pointer;
+	}
+}
