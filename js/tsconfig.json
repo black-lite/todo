@@ -1,0 +1,15 @@
+{
+	"compilerOptions": {
+		"module": "none",
+		"target": "ESNext",
+		"lib": ["ESNext", "DOM"],
+		"declaration": true,
+		"sourceMap": true,
+		"alwaysStrict": true,
+		"outFile": "../main.js"
+	},
+	"include": [
+		"**/*",
+	],
+	"exclude": ["node_module"]
+}
