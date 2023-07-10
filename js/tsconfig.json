@@ -9,7 +9,7 @@
 		"outFile": "../main.js"
 	},
 	"include": [
-		"**/*",
+		"**/*", "components.d.ts"
 	],
 	"exclude": ["node_module"]
 }

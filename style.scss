@@ -1,13 +1,43 @@
-html { width: 100%; height: 100%; }
-body {
-	width: 100%; height: 100%;
-	> div {
-		display: flex; justify-content: center; align-items: center;
-		box-shadow: 0 0 50px 5px rgba(34, 60, 80, 0.2);
-	}
+@import "overlay";
+@import "interface";
 
-	div.create {
-		width: 200px; height: 40px; line-height: 40px; text-align: center;
-		color: white; background-color: #4f4fe2; cursor: pointer;
+* { font-family: "Montserrat", serif; }
+html { width: 100%; height: 100%; }
+
+body {
+	width: 100%; height: 100%; margin: 0; padding: 20px; box-sizing: border-box;
+	> div {
+		padding: 20px; box-sizing: border-box;
+		display: flex; justify-content: space-between; flex-direction: column; gap: 12px;
+		position: relative; border-radius: 40px; box-shadow: 0 0 50px 5px rgba(34, 60, 80, 0.2); height: 100%;
+
+		> div {
+			padding: 20px;
+			&.head {
+				flex: none; display: none;
+				background-color: aliceblue; border-radius: 20px; height: 50px;
+			}
+
+			&.content {
+				flex: auto;
+
+				> div.tasks {
+					display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; gap: 12px;
+					> div.create {
+						width: 200px; height: 40px; line-height: 40px; text-align: center;
+						background-color: #4f4fe2; color: white; cursor: pointer; border-radius: 14px;
+					}
+
+					> div.list {
+						display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px;
+						> span.empty {
+							&.hide { display: none; }
+						}
+					}
+				}
+
+				> div.version { position: absolute; bottom: 20px; right: 20px; }
+			}
+		}
 	}
 }

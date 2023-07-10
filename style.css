@@ -1,3 +1,84 @@
+div#overlays {
+  display: none;
+}
+div#overlays.opened {
+  display: block;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+div#overlays.opened > div {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+div#overlays.opened > div:last-of-type.def {
+  background: rgba(9, 60, 98, 0.08);
+}
+div#overlays.opened > div:nth-of-type(1) {
+  z-index: 1;
+}
+div#overlays.opened > div:nth-of-type(2) {
+  z-index: 2;
+}
+div#overlays.opened > div:nth-of-type(3) {
+  z-index: 3;
+}
+div#overlays.opened > div:nth-of-type(4) {
+  z-index: 4;
+}
+div#overlays.opened > div:nth-of-type(5) {
+  z-index: 5;
+}
+
+div.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+div.container > div.add_task {
+  padding: 50px;
+  border-radius: 40px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+div.container > div.add_task > input {
+  outline: none;
+  height: 40px;
+  width: 200px;
+  box-sizing: border-box;
+  border-radius: 14px;
+  padding: 12px;
+  border: 1px solid #4f4fe2;
+  caret-color: #4f4fe2;
+}
+
+div.button {
+  width: 200px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  background-color: #4f4fe2;
+  color: white;
+  cursor: pointer;
+  border-radius: 14px;
+}
+
+* {
+  font-family: "Montserrat", serif;
+}
+
 html {
   width: 100%;
   height: 100%;
@@ -6,21 +87,67 @@ html {
 body {
   width: 100%;
   height: 100%;
+  margin: 0;
+  padding: 20px;
+  box-sizing: border-box;
 }
 body > div {
+  padding: 20px;
+  box-sizing: border-box;
   display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
+  border-radius: 40px;
+  box-shadow: 0 0 50px 5px rgba(34, 60, 80, 0.2);
+  height: 100%;
+}
+body > div > div {
+  padding: 20px;
+}
+body > div > div.head {
+  flex: none;
+  display: none;
+  background-color: aliceblue;
+  border-radius: 20px;
+  height: 50px;
+}
+body > div > div.content {
+  flex: auto;
+}
+body > div > div.content > div.tasks {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 0 50px 5px rgba(34, 60, 80, 0.2);
+  height: 100%;
+  gap: 12px;
 }
-body div.create {
+body > div > div.content > div.tasks > div.create {
   width: 200px;
   height: 40px;
   line-height: 40px;
   text-align: center;
-  color: white;
   background-color: #4f4fe2;
+  color: white;
   cursor: pointer;
+  border-radius: 14px;
+}
+body > div > div.content > div.tasks > div.list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+body > div > div.content > div.tasks > div.list > span.empty.hide {
+  display: none;
+}
+body > div > div.content > div.version {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
 }
 
 /*# sourceMappingURL=style.css.map */
