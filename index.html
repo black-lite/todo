@@ -12,14 +12,11 @@
 	<body>
 		<div>
 			<div class="head">Тудушка</div>
-			<div class="content">
-				<div class="tasks"></div>
-				<div class="version">TODO v1</div>
-			</div>
+			<div class="content"></div>
 		</div>
 		<div id="overlays"></div>
 	</body>
 	<script>
-		ccOverlay.init('div#overlays'); new Main();
+		ccOverlay.init('div#overlays'); (new Category()).create();
 	</script>
 </html>

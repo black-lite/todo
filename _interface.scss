@@ -1,4 +1,7 @@
 div.button {
-	width: 200px; height: 40px; line-height: 40px; text-align: center;
+	font-weight: 500;
 	background-color: #4f4fe2; color: white; cursor: pointer; border-radius: 14px;
+	width: 200px; height: 40px; line-height: 40px; text-align: center; user-select: none;
+
+	&.disabled { background-color: #dbdbf5; color: #abc7ff; cursor: no-drop; }
 }

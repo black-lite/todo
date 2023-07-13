@@ -21,22 +21,13 @@ body {
 			&.content {
 				flex: auto;
 
-				> div.tasks {
-					display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; gap: 12px;
-					> div.create {
-						width: 200px; height: 40px; line-height: 40px; text-align: center;
-						background-color: #4f4fe2; color: white; cursor: pointer; border-radius: 14px;
-					}
+				> div.category {
+					> div.tasks {
+						display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; gap: 12px;
 
-					> div.list {
-						display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px;
-						> span.empty {
-							&.hide { display: none; }
-						}
+						> div.list { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; }
 					}
 				}
-
-				> div.version { position: absolute; bottom: 20px; right: 20px; }
 			}
 		}
 	}
