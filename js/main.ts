@@ -81,13 +81,13 @@ class Category
 		this.container = $('body > div > div.content');
 	}
 
-	protected create()
+	protected create() : Category
 	{
 		this.category = $('<div/>', { class: 'category' });
 
 		this.category.append(`
 			<div class="title"><input type="text" placeholder="Название категории"/></div>
-			<div class="tasks"><div><div class="button">Новая задача</div></div></div>
+			<div class="tasks"><div class="add">Новая задача</div></div>
 		`);
 
 		this.category.find('.button').on('click', () => {
@@ -95,10 +95,9 @@ class Category
 			this.category.find('div.tasks').append(task);
 			this.tasks.push(task);
 		});
-
-
-
 		this.container.append(this.category)
+
+		return this;
 	}
 }
 

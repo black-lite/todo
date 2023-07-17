@@ -53,26 +53,26 @@ class Task {
     }
 }
 class Categories {
+    items = [];
+    container = null;
     constructor() {
-        this.items = [];
-        this.container = null;
         // this.container = $('body > div > div.content');
         // this.container.append(``)
     }
     add(item) { this.items.push(item); }
 }
 class Category {
+    tasks = [];
+    container = null;
+    category = null;
     constructor() {
-        this.tasks = [];
-        this.container = null;
-        this.category = null;
         this.container = $('body > div > div.content');
     }
     create() {
         this.category = $('<div/>', { class: 'category' });
         this.category.append(`
 			<div class="title"><input type="text" placeholder="Название категории"/></div>
-			<div class="tasks"><div><div class="button">Новая задача</div></div></div>
+			<div class="tasks"><div class="add">Новая задача</div></div>
 		`);
         this.category.find('.button').on('click', () => {
             const task = Task.create();
@@ -80,14 +80,18 @@ class Category {
             this.tasks.push(task);
         });
         this.container.append(this.category);
+        return this;
     }
 }
 let TDCategories = new Category();
 var Components;
 (function (Components) {
     class Overlay {
+        opened;
+        container = null;
+        onClick;
+        onClose;
         constructor(parent, style = 'def') {
-            this.container = null;
             this.opened = false;
             this.onClick = null;
             this.onClose = null;
@@ -122,8 +126,10 @@ var Components;
         }
     }
     class OverlayEngine {
+        current;
+        overlays;
+        container = null;
         constructor() {
-            this.container = null;
             this.overlays = [];
             this.current = null;
             this.container = null;
