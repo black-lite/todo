@@ -6,10 +6,12 @@
 		"declaration": true,
 		"sourceMap": true,
 		"alwaysStrict": true,
-		"outFile": "../main.js"
+		"outFile": "../main.js",
+	  	"jsx": "react",
+	  	"reactNamespace": "Templates"
 	},
 	"include": [
-		"**/*", "components.d.ts"
+		"**/*", "../scripts/templates.ui.d.ts","components.d.ts"
 	],
 	"exclude": ["node_module"]
 }

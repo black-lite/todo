@@ -126,14 +126,14 @@ body > div > div.content {
   gap: 16px;
   flex: auto;
 }
-body > div > div.content > div.category > div.tasks {
+body > div > div.content > div.category > div > div.tasks {
   display: flex;
   flex-direction: column;
   align-items: center;
   height: 100%;
   gap: 12px;
 }
-body > div > div.content > div.category > div.tasks > div.add {
+body > div > div.content > div.category > div > div.tasks > div.add {
   padding-left: 14px;
   color: #cacaca;
   font-size: 14px;

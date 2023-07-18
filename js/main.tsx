@@ -85,13 +85,15 @@ class Category
 	{
 		this.category = $('<div/>', { class: 'category' });
 
-		this.category.append(`
+		let add
+		this.category.append(<div>
 			<div class="title"><input type="text" placeholder="Название категории"/></div>
-			<div class="tasks"><div class="add">Новая задача</div></div>
-		`);
+			<div class="tasks">{add = <div class="add">Новая задача</div>}</div>
+		</div>);
 
-		this.category.find('.button').on('click', () => {
+		add.on('click', () => {
 			const task = Task.create();
+			console.log(this.category);
 			this.category.find('div.tasks').append(task);
 			this.tasks.push(task);
 		});

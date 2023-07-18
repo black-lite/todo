@@ -23,15 +23,17 @@ body {
 				flex: auto;
 
 				> div.category {
-					> div.tasks {
-						display: flex; flex-direction: column; align-items: center; height: 100%; gap: 12px;
-						> div.add {
-							padding-left: 14px; color: #cacaca; font-size: 14px;
-							background-position: left center; background-repeat: no-repeat;
-							background-image: url("icons/plus_grey.svg"); background-size: 12px;
-						}
-						//> div.list { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; }
+					> div {
+						> div.tasks {
+							display: flex; flex-direction: column; align-items: center; height: 100%; gap: 12px;
+							> div.add {
+								padding-left: 14px; color: #cacaca; font-size: 14px;
+								background-position: left center; background-repeat: no-repeat;
+								background-image: url("icons/plus_grey.svg"); background-size: 12px;
+							}
+							//> div.list { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; }
 
+						}
 					}
 				}
 			}
