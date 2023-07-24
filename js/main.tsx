@@ -56,20 +56,6 @@ class Task
 	}
 }
 
-class Categories
-{
-	public items : JQuery[] = [];
-	public container : JQuery = null;
-
-	public constructor()
-	{
-		// this.container = $('body > div > div.content');
-		// this.container.append(``)
-	}
-
-	public add(item: JQuery) { this.items.push(item); }
-}
-
 class Category
 {
 	public tasks : JQuery[] = [];
@@ -85,7 +71,7 @@ class Category
 	{
 		this.category = $('<div/>', { class: 'category' });
 
-		let add
+		let add;
 		this.category.append(<div>
 			<div class="title"><input type="text" placeholder="Название категории"/></div>
 			<div class="tasks">{add = <div class="add">Новая задача</div>}</div>
@@ -94,7 +80,7 @@ class Category
 		add.on('click', () => {
 			const task = Task.create();
 			console.log(this.category);
-			this.category.find('div.tasks').append(task);
+			this.category.find('div.tasks').prepend(task);
 			this.tasks.push(task);
 		});
 		this.container.append(this.category)

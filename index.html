@@ -12,12 +12,14 @@
 	</head>
 	<body>
 		<div>
-			<div class="head">Тудушка</div>
+			<div class="head">
+				<a class="add_category">добавить категорию</a>
+			</div>
 			<div class="content"></div>
 		</div>
 		<div id="overlays"></div>
 	</body>
 	<script>
-		ccOverlay.init('div#overlays'); (new Category()).create().create().create().create();
+		ccOverlay.init('div#overlays'); new Category().create();
 	</script>
 </html>

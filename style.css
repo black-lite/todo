@@ -110,34 +110,60 @@ body > div {
   box-shadow: 0 0 50px 5px rgba(34, 60, 80, 0.2);
   height: 100%;
 }
-body > div > div {
-  padding: 20px;
-}
 body > div > div.head {
-  flex: none;
-  display: none;
-  background-color: aliceblue;
+  display: flex;
   border-radius: 20px;
-  height: 50px;
+  flex: none;
+}
+body > div > div.head > a.add_category {
+  display: block;
+  width: 20px;
+  padding: 10px;
+  user-select: none;
+  cursor: pointer;
+  text-align: center;
+  background-color: #20adff;
+  flex: 1;
+  border-radius: 16px;
+  color: white;
+  font-weight: 500;
 }
 body > div > div.content {
+  padding: 20px;
+  flex: auto;
+  overflow: auto;
+  position: relative;
   display: flex;
   justify-content: left;
   gap: 16px;
-  flex: auto;
 }
-body > div > div.content > div.category > div > div.tasks {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 100%;
-  gap: 12px;
+body > div > div.content > div.category > div > div.title {
+  margin-bottom: 10px;
+}
+body > div > div.content > div.category > div > div.tasks > div.task {
+  margin-bottom: 5px;
+}
+body > div > div.content > div.category > div > div.tasks > div.task > label > span > input {
+  box-sizing: border-box;
+  background: white;
+  overflow: hidden;
+  min-height: 40px;
+  border: 1px solid;
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  user-select: none;
+  transition: background 100ms ease-out 0s;
+  cursor: pointer;
+  box-shadow: rgba(15, 15, 15, 0.1) 0 0 0 1px, rgba(15, 15, 15, 0.1) 0 2px 4px;
+  border-radius: 4px;
 }
 body > div > div.content > div.category > div > div.tasks > div.add {
-  padding-left: 14px;
+  align-self: start;
+  padding: 4px 4px 4px 20px;
   color: #cacaca;
   font-size: 14px;
-  background-position: left center;
+  background-position: 3px center;
   background-repeat: no-repeat;
   background-image: url("icons/plus_grey.svg");
   background-size: 12px;
