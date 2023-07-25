@@ -14,7 +14,7 @@ class Task
 	{
 		return (<div class="task">
 			<label><span><input type="text" placeholder="Название задачи"/></span></label>
-			<span class="delete"></span>
+			<span class="delete"/>
 		</div>);
 	}
 }

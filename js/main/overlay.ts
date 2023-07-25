@@ -12,7 +12,10 @@ namespace Components
 			this.opened = false;
 			this.onClick = null;
 			this.onClose = null;
-			this.container = $('<div/>', {	class: style, click: () => {
+			this.container = $('<div/>', {
+				class: style,
+				click: () =>
+				{
 					if (this.onClick) { if (this.onClick()) ccOverlay.close(); }
 					else ccOverlay.close();
 				}
