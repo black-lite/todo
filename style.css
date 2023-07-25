@@ -1,3 +1,16 @@
+@charset "UTF-8";
+input:focus-visible {
+  outline: none;
+}
+
+/* ШРИФТЫ СТИЛИ */
+/* ПАЛИТРА */
+/* Text/Primary */
+/* toggle */
+/* Accent/blue */
+/* ТЕКСТ ЦВЕТ */
+/* ЭЛЕМЕНТЫ ЦВЕТ */
+/* МИКСИНЫ */
 div#overlays {
   display: none;
 }
@@ -144,24 +157,23 @@ body > div > div.content > div.category > div > div.tasks > div.task {
   margin-bottom: 5px;
 }
 body > div > div.content > div.category > div > div.tasks > div.task > label > span > input {
-  box-sizing: border-box;
-  background: white;
-  overflow: hidden;
-  min-height: 40px;
-  border: 1px solid;
   display: block;
-  color: inherit;
+  box-sizing: border-box;
+  background-color: white;
+  overflow: hidden;
   text-decoration: none;
   user-select: none;
-  transition: background 100ms ease-out 0s;
   cursor: pointer;
-  box-shadow: rgba(15, 15, 15, 0.1) 0 0 0 1px, rgba(15, 15, 15, 0.1) 0 2px 4px;
   border-radius: 4px;
+  min-height: 40px;
+  border: 1px solid #A4AFBD;
 }
-body > div > div.content > div.category > div > div.tasks > div.add {
+body > div > div.content > div.category > div > div.add {
   align-self: start;
+  cursor: pointer;
+  user-select: none;
   padding: 4px 4px 4px 20px;
-  color: #cacaca;
+  color: #A4AFBD;
   font-size: 14px;
   background-position: 3px center;
   background-repeat: no-repeat;

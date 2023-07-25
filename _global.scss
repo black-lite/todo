@@ -1,0 +1,33 @@
+input {
+	&:focus-visible { outline: none; }
+}
+
+/* ШРИФТЫ СТИЛИ */
+@mixin small  		{ font-size: 10px; line-height: 12px; font-weight: 200; } 		    // styleName: OVERLINE;
+@mixin medium  		{ font-size: 14px; line-height: 16px; font-weight: 400; } 		    // styleName: OVERLINE;
+@mixin big  		{ font-size: 18px; line-height: 20px; font-weight: 600; } 		    // styleName: OVERLINE;
+
+
+/* ПАЛИТРА */
+$_color_black: #292D31;         /* Text/Primary */
+$_color_white: #fafafa;
+$_color_grey: #A4AFBD;        /* toggle */
+$_color_blue: #3071F0;    /* Accent/blue */
+
+
+/* ТЕКСТ ЦВЕТ */
+$text_grey: $_color_grey;
+$text_white: $_color_white;
+$text_black: $_color_black;
+$text_blue: $_color_blue;
+
+/* ЭЛЕМЕНТЫ ЦВЕТ */
+$elem_blue: $_color_blue;
+$elem_grey: $_color_grey;
+$elem_white: $_color_white;
+
+/* МИКСИНЫ */
+//@mixin background-image($url, $size, $position, $repeat) {
+//	background-image: url($url); background-size: $size;
+//	background-position: $position; background-repeat: $repeat;
+//}

@@ -1,55 +1,17 @@
 "use strict";
-// class Main
-// {
-// 	public tasks : Task[];
-// 	public container : JQuery;
-// 	public list : JQuery;
-//
-// 	constructor()
-// 	{
-// 		this.tasks = [];
-// 		this.container = $('div.tasks');
-// 		const btn = $('<div/>', { class: 'button create', text: 'Новая задача' }).on('click', () => this.createTask());
-// 		this.list = $('<div/>', { class: 'list' }).appendTo(this.container);
-// 		this.container.append(btn);
-// 	}
-//
-// 	public createTask()
-// 	{
-// 		const container = ccOverlay.overlay();
-// 		ccOverlay.open(() => true, null);
-//
-// 		container.append(`<div class="container">
-// 			<div class="add_task">
-// 				<input type="text" placeholder="НАЗВАНИЕ ЗАДАЧИ">
-// 				<div class="button">Создать</div>
-// 			</div>
-// 		</div>`);
-//
-// 		const input = container.find('input');
-// 		const button = container.find('div.button').addClass('disabled');
-//
-// 		input.on('input', () => {
-// 			if (input.val().toString().trim() == '') button.off('click').addClass('disabled');
-// 			else
-// 			{
-// 				button.removeClass('disabled');
-// 				button.off('click').on('click', () => new Task(container.find('input').val().toString(), this.list));
-// 			}
-// 		});
-//
-// 		container.find('div.add_task').on('click', () => false);
-//
-// 		// const task = new Task(container.find('input').val().toString(), this.list)
-// 	}
-// }
+class Main {
+    constructor() {
+        $('a.add_category').on('click', () => new Category().create());
+    }
+}
 class Task {
     constructor() { }
     static create() {
-        return $(`<div class="task">
-			<label><span><input type="text" placeholder="Название задачи"/></span></label>
-			<span class="delete"></span>
-		</div>`);
+        return (Templates.createElement("div", { class: "task" },
+            Templates.createElement("label", null,
+                Templates.createElement("span", null,
+                    Templates.createElement("input", { type: "text", placeholder: "\u041D\u0430\u0437\u0432\u0430\u043D\u0438\u0435 \u0437\u0430\u0434\u0430\u0447\u0438" }))),
+            Templates.createElement("span", { class: "delete" })));
     }
 }
 class Category {
@@ -65,11 +27,12 @@ class Category {
         this.category.append(Templates.createElement("div", null,
             Templates.createElement("div", { class: "title" },
                 Templates.createElement("input", { type: "text", placeholder: "\u041D\u0430\u0437\u0432\u0430\u043D\u0438\u0435 \u043A\u0430\u0442\u0435\u0433\u043E\u0440\u0438\u0438" })),
-            Templates.createElement("div", { class: "tasks" }, add = Templates.createElement("div", { class: "add" }, "\u041D\u043E\u0432\u0430\u044F \u0437\u0430\u0434\u0430\u0447\u0430"))));
+            Templates.createElement("div", { class: "tasks" }),
+            add = Templates.createElement("div", { class: "add" }, "\u041D\u043E\u0432\u0430\u044F \u0437\u0430\u0434\u0430\u0447\u0430")));
         add.on('click', () => {
             const task = Task.create();
             console.log(this.category);
-            this.category.find('div.tasks').prepend(task);
+            this.category.find('div.tasks').append(task);
             this.tasks.push(task);
         });
         this.container.append(this.category);
